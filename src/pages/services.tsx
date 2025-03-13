@@ -10,13 +10,14 @@ const services = [
   {
     id: 1,
     title: '定期保養',
-    description: '度身訂做合適的冷氣保養服務，延長設備壽命，確保運行效率，節省能源消耗。',
+    description: '度身訂做合適的冷氣保養服務，延長設備壽命，確保運行效率，節省能源消耗。專業處理VRV/VRF系統。',
     detail: `
       <h4 class="text-lg font-bold mb-3">定期保養服務內容</h4>
       <ul class="list-disc pl-5 mb-4 space-y-2">
         <li>每年大洗冷氣系統，以高壓噴射式藥水清洗</li>
         <li>每月/季定期清洗隔塵網</li>
         <li>定期檢查機件</li>
+        <li>VRV/VRF系統專業檢查維護</li>
         <li>保養期內免費上門檢查及維修冷氣系統，次數不限</li>
       </ul>
       <p class="mb-3">客戶如需度身訂做合適的冷氣保養服務，請致電：3188 0271</p>
@@ -27,10 +28,11 @@ const services = [
   {
     id: 2,
     title: '供應零售',
-    description: '各大品牌冷氣機銷售，包括日立、大金、三菱等知名品牌。',
+    description: '各大品牌冷氣機銷售，包括大金VRV/VRF系統、日立、三菱等知名品牌。',
     detail: `
       <h4 class="text-lg font-bold mb-3">我們供應的產品</h4>
       <ul class="list-disc pl-5 mb-4 space-y-2">
+        <li>大金VRV/VRF系統（Daikin VRV/VRF System）</li>
         <li>大金（Daikin）</li>
         <li>珍寶（Chunbao）</li>
         <li>日立（Hitachi）</li>
@@ -149,10 +151,13 @@ const ServicesPage: NextPage = () => {
   };
 
   return (
-    <Layout>
+    <Layout
+      title="冷氣工程服務 | 冷氣安裝、維修、保養、清洗、檢查 | 大金VRV專家 - 同發冷氣工程"
+      description="同發冷氣工程提供專業冷氣安裝、維修、保養、清洗及檢查服務，大金VRV/VRF系統專家，多年冷氣工程經驗，服務包括家用分體式及商用中央空調系統，覆蓋香港全區。"
+    >
       <Head>
-        <title>業務範圍 - 同發冷氣工程有限公司</title>
-        <meta name="description" content="同發冷氣工程有限公司提供全方位冷氣服務，包括定期保養、供應零售、安裝工程、清洗冷氣、檢查維修及牌照顧問等。" />
+        <meta name="keywords" content="冷氣保養,冷氣檢查,檢查冷氣,VRV,VRF,大金,大金VRV,冷氣維修,維修冷氣,洗冷氣,冷氣工程,冷氣清洗,冷氣安裝,冷氣公司,服務範圍" />
+        <link rel="canonical" href="https://aircon88.innovisle.net/services" />
       </Head>
 
       {/* 頂部橫幅 */}
@@ -178,41 +183,38 @@ const ServicesPage: NextPage = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">我們的專業服務</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">我們的服務</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              同發冷氣工程有限公司提供全面的冷氣服務，從安裝、維修到保養，一站式滿足您的所有需求
+              我們提供全方位冷氣工程服務，滿足各種客戶需求
             </p>
             <div className="w-16 h-1 bg-primary mx-auto mt-4"></div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
               <div 
                 key={service.id} 
-                className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg hover:scale-105 cursor-pointer"
-                onClick={() => openServiceModal(service)}
+                id={service.slug}
+                className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg hover:translate-y-[-5px]"
               >
-                <div className="relative h-56">
+                <div className="relative h-48">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover object-center"
+                    className="object-cover"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    {service.description}
-                  </p>
-                  <button 
-                    className="inline-flex items-center text-primary hover:text-secondary font-semibold py-1 border-b border-primary hover:border-secondary transition-colors"
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <button
+                    onClick={() => openServiceModal(service)}
+                    className="text-primary font-semibold hover:text-primary-dark transition-colors flex items-center"
                   >
                     了解更多
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
                 </div>

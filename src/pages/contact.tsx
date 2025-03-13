@@ -8,10 +8,13 @@ const ContactPage: NextPage = () => {
   const { openModal: openContactModal } = useContactModal();
 
   return (
-    <Layout>
+    <Layout
+      title="聯繫同發冷氣工程 | 冷氣安裝維修保養 | 大金VRV/VRF系統服務"
+      description="同發冷氣工程有限公司提供專業冷氣安裝、維修、保養服務，大金VRV系統專家，歡迎聯繫我們獲取免費報價，電話：3188-0271，手機：6215-6152。"
+    >
       <Head>
-        <title>聯繫我們 - 同發冷氣工程有限公司</title>
-        <meta name="description" content="同發冷氣工程有限公司聯繫方式，包括電話、手機、傳真、電郵和地址。" />
+        <meta name="keywords" content="冷氣保養,冷氣檢查,檢查冷氣,VRV,VRF,大金,大金VRV,冷氣維修,維修冷氣,洗冷氣,冷氣工程,冷氣清洗,冷氣安裝,冷氣公司,聯繫我們,冷氣報價" />
+        <link rel="canonical" href="https://aircon88.innovisle.net/contact" />
       </Head>
 
       {/* 頂部橫幅 */}

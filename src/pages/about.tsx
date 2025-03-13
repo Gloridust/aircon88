@@ -59,10 +59,13 @@ const qualifications = [
 
 const AboutPage: NextPage = () => {
   return (
-    <Layout>
+    <Layout
+      title="關於同發冷氣工程 | 專業冷氣安裝維修保養公司 | 大金VRV專家"
+      description="同發冷氣工程有限公司擁有30年專業冷氣安裝、維修、保養經驗，持多項專業資格，專營大金VRV/VRF系統，服務範圍覆蓋香港全區。"
+    >
       <Head>
-        <title>公司簡介 - 同發冷氣工程有限公司</title>
-        <meta name="description" content="同發冷氣工程有限公司自成立以來，憑藉多年豐富的冷氣工程經驗，已為無數顧客提供一站式冷氣服務。" />
+        <meta name="keywords" content="冷氣保養,冷氣檢查,檢查冷氣,VRV,VRF,大金,大金VRV,冷氣維修,維修冷氣,洗冷氣,冷氣工程,冷氣清洗,冷氣安裝,冷氣公司,同發冷氣,冷氣工程公司" />
+        <link rel="canonical" href="https://aircon88.innovisle.net/about" />
       </Head>
 
       {/* 頂部橫幅 */}
@@ -70,14 +73,17 @@ const AboutPage: NextPage = () => {
         <div className="absolute inset-0 z-0">
           <Image
             src="/about-banner.png"
-            alt="同發冷氣工程有限公司"
+            alt="關於同發冷氣工程"
             fill
             className="object-cover object-center opacity-30"
           />
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">公司簡介</h1>
-          <div className="w-24 h-1 bg-primary mx-auto"></div>
+          <p className="text-lg text-white/90 max-w-2xl mx-auto">
+            專業冷氣工程服務商，擁有30年行業經驗
+          </p>
+          <div className="w-24 h-1 bg-primary mx-auto mt-6"></div>
         </div>
       </div>
 

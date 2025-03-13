@@ -34,6 +34,10 @@ const faqData: FAQCategory[] = [
       {
         question: '清洗會否有保養期?',
         answer: '一般我們會提供1個月的保養'
+      },
+      {
+        question: '如何清洗大金VRV系統的冷氣機？',
+        answer: '大金VRV系統需要專業的清洗維護，與普通分體式冷氣不同。我們的專業技術人員會使用特殊設備和清潔劑，清洗室內機組的蒸發器、風扇、排水盤和過濾網，同時檢查室外機組的冷凝器和製冷劑。由於VRV系統較為複雜，建議每季度進行一次專業清洗，確保系統高效運行，延長使用壽命。'
       }
     ]
   },
@@ -48,6 +52,14 @@ const faqData: FAQCategory[] = [
       {
         question: '定頻式 及 變頻式 分別?',
         answer: '定頻式是指空調的壓縮機工作頻率是固定不變的，始終是50Hz，當空調製冷將房間溫度降到設定溫度時，壓縮機會停止工作。 而變頻式是指空調壓縮機會根據設定溫度與環境溫度的差值大小，來改變工作頻率，當空調製冷將房間溫度降到設定溫度時，壓縮機不會停止工作，而是轉為較低的工作頻率來工作。 簡單理解：定頻式是根據溫控器探頭來指揮空調機的啟動和停機（所以它有頻繁啟動/停機的特點），而空調機的每次啟動都帶來一個較大的瞬間電流，由此造成較耗電。而變頻式是通過改變工作頻率來維持溫度設定。也就是說它是自開機以來就不再停機了，只是通過改變運行頻率來工作，由此它就沒有什麼瞬間電流的問題了。所以它較定頻空調省電。'
+      },
+      {
+        question: '大金VRV/VRF系統與傳統分體式冷氣有什麼不同？',
+        answer: '大金VRV（Variable Refrigerant Volume）或VRF（Variable Refrigerant Flow）系統是一種高效能的中央空調系統，與傳統分體式冷氣相比有多個優勢：1) 能效更高，可節省20-30%能耗；2) 一個室外機可連接多達64個室內機；3) 溫度控制更精準，每個區域可獨立控制；4) 運行更安靜；5) 佔用空間更少；6) 適合大型商業和工業建築。安裝VRV/VRF系統需要專業團隊進行設計和施工，我們擁有豐富的大金VRV系統安裝經驗，可提供整體解決方案。'
+      },
+      {
+        question: '大金VRV系統安裝需要多長時間？',
+        answer: '大金VRV系統的安裝時間取決於項目規模和複雜度。小型辦公室通常需要3-5天，而大型商業空間可能需要2-4週。安裝過程包括系統設計規劃、室外機和室內機安裝、冷媒管道連接、電氣接線、系統測試和調試等步驟。我們的專業團隊會根據客戶需求制定詳細的安裝計劃，確保安裝質量和效率。'
       },
       {
         question: '冷氣甚麼牌子耐用?',
@@ -154,27 +166,16 @@ const faqData: FAQCategory[] = [
 const FAQPage: NextPage = () => {
   const { openModal: openContactModal } = useContactModal();
   const [activeCategory, setActiveCategory] = useState<number>(1);
-  const [openItems, setOpenItems] = useState<{[key: string]: boolean}>({});
-  // 切換問題的開關狀態
-  const toggleItem = (categoryId: number, questionIndex: number) => {
-    const key = `${categoryId}-${questionIndex}`;
-    setOpenItems(prev => ({
-      ...prev,
-      [key]: !prev[key]
-    }));
-  };
-
-  // 檢查問題是否打開
-  const isItemOpen = (categoryId: number, questionIndex: number) => {
-    const key = `${categoryId}-${questionIndex}`;
-    return openItems[key] !== undefined ? openItems[key] : true; // 默認為打開狀態
-  };
+  const [expandedItems, setExpandedItems] = useState<Record<number, boolean>>({});
 
   return (
-    <Layout>
+    <Layout
+      title="冷氣常見問題FAQ | 冷氣保養、維修、檢查、清洗、大金VRV系統 - 同發冷氣工程"
+      description="了解冷氣使用、保養、維修、檢查、清洗及大金VRV/VRF系統相關的常見問題與專業解答。同發冷氣工程專業技術團隊為您提供冷氣系統全方位支援。"
+    >
       <Head>
-        <title>常見問題 - 同發冷氣工程有限公司</title>
-        <meta name="description" content="同發冷氣工程有限公司常見問題解答，包括冷氣清洗、安裝、維修等相關問題。" />
+        <meta name="keywords" content="冷氣FAQ,冷氣常見問題,冷氣保養,冷氣檢查,檢查冷氣,VRV系統,VRF系統,大金VRV,冷氣維修,維修冷氣,洗冷氣,冷氣清洗,冷氣安裝" />
+        <link rel="canonical" href="https://aircon88.innovisle.net/faq" />
       </Head>
 
       {/* 頂部橫幅 */}
@@ -243,14 +244,17 @@ const FAQPage: NextPage = () => {
                         className="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
                       >
                         <button
-                          onClick={() => toggleItem(category.id, index)}
+                          onClick={() => setExpandedItems(prev => ({
+                            ...prev,
+                            [category.id]: !prev[category.id]
+                          }))}
                           className="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors"
                         >
                           <span className="text-lg font-semibold text-gray-900">{item.question}</span>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className={`h-5 w-5 text-gray-500 transition-transform ${
-                              isItemOpen(category.id, index) ? 'transform rotate-180' : ''
+                              expandedItems[category.id] ? 'transform rotate-180' : ''
                             }`}
                             fill="none"
                             viewBox="0 0 24 24"
@@ -267,7 +271,7 @@ const FAQPage: NextPage = () => {
                         
                         <div 
                           className={`p-4 bg-white transition-all duration-300 ${
-                            isItemOpen(category.id, index) 
+                            expandedItems[category.id] 
                               ? 'max-h-96 opacity-100' 
                               : 'max-h-0 opacity-0 overflow-hidden'
                           }`}

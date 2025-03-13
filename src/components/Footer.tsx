@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white pt-12 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">同發冷氣工程有限公司</h3>
             <ul className="space-y-2">
@@ -84,16 +84,53 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+
+          <div>
+            <h3 className="text-xl font-bold mb-4">我們的服務</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/services#maintenance" className="hover:text-primary transition-colors">
+                  冷氣保養
+                </Link>
+              </li>
+              <li>
+                <Link href="/services#repair" className="hover:text-primary transition-colors">
+                  冷氣維修
+                </Link>
+              </li>
+              <li>
+                <Link href="/services#cleaning" className="hover:text-primary transition-colors">
+                  冷氣清洗
+                </Link>
+              </li>
+              <li>
+                <Link href="/services#installation" className="hover:text-primary transition-colors">
+                  冷氣安裝
+                </Link>
+              </li>
+              <li>
+                <Link href="/services#vrv-system" className="hover:text-primary transition-colors">
+                  大金VRV/VRF系統
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-gray-400 text-center">
-          <p>&copy; {currentYear} 同發冷氣工程有限公司. 版權所有.</p>
-          <div className="mt-2">
-            <span className="inline-block">
-              <a href="https://www.google.com/maps?q=屯門新平街2號屯門工業中心A座10樓A1室" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary">
+        <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-gray-400">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p>&copy; {currentYear} 同發冷氣工程有限公司. 版權所有.</p>
+            <div className="mt-3 md:mt-0 space-x-4">
+              <Link href="/sitemap.xml" className="text-gray-400 hover:text-primary" target="_blank">
+                網站地圖
+              </Link>
+              <Link href="https://www.google.com/maps?q=屯門新平街2號屯門工業中心A座10樓A1室" className="text-gray-400 hover:text-primary" target="_blank" rel="noopener noreferrer">
                 在Google地圖上查看
-              </a>
-            </span>
+              </Link>
+            </div>
+          </div>
+          <div className="mt-4 text-xs text-gray-500 text-center">
+            <p>專業提供：冷氣保養 | 冷氣檢查 | 大金VRV系統 | 冷氣維修 | 冷氣清洗 | 冷氣安裝 | 冷氣工程</p>
           </div>
         </div>
       </div>
