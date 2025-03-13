@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Button from './ui/Button';
 
 export default function Hero() {
   return (
@@ -26,17 +25,21 @@ export default function Hero() {
             同發冷氣工程有限公司提供全方位冷氣安裝、維修及保養服務，服務香港全區，專業可靠，價格合理。
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <Button href="/contact" variant="primary" size="md" className="shadow-lg">
+            {/* 第一個按鈕：使用白色背景和藍色文字，確保在深色背景上清晰可見 */}
+            <a 
+              href="/contact" 
+              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-white text-primary hover:bg-primary hover:text-white border border-white transition-colors shadow-lg"
+            >
               立即聯繫我們
-            </Button>
-            <Button 
+            </a>
+            
+            {/* 第二個按鈕：使用透明背景和白色文字，帶白色邊框 */}
+            <a 
               href="/services" 
-              variant="secondary" 
-              size="md" 
-              className="border-white text-white hover:bg-white hover:text-primary hover:border-white shadow-lg"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-transparent text-white hover:bg-white hover:text-primary border border-white transition-colors shadow-lg"
             >
               了解我們的服務
-            </Button>
+            </a>
           </div>
         </div>
       </div>
