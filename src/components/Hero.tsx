@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useContactModal } from '@/pages/_app';
+import Link from 'next/link';
 
 export default function Hero() {
   const { openModal } = useContactModal();
@@ -37,12 +38,12 @@ export default function Hero() {
             </button>
             
             {/* 第二個按鈕：使用透明背景和白色文字，帶白色邊框 */}
-            <a 
+            <Link 
               href="/services" 
               className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-transparent text-white hover:bg-white hover:text-primary border border-white transition-colors shadow-lg"
             >
               了解我們的服務
-            </a>
+            </Link>
           </div>
         </div>
       </div>

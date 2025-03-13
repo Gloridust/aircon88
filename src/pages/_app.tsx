@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Noto_Sans_HK } from "next/font/google";
 import { createContext, useState, useEffect, useContext } from "react";
+import Head from "next/head";
 
 // 使用繁体中文字体
 const notoSansHK = Noto_Sans_HK({
@@ -58,6 +59,9 @@ export function useContactModal() {
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`${notoSansHK.variable}`}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <ContactModalProvider>
         <Component {...pageProps} />
       </ContactModalProvider>

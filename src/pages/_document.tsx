@@ -7,7 +7,6 @@ export default function Document() {
         <meta name="description" content="同發冷氣工程有限公司 - 專業冷氣安裝、維修及保養服務，服務香港全區" />
         <meta name="keywords" content="冷氣工程,冷氣安裝,冷氣維修,冷氣保養,香港冷氣,空調服務,冷氣工程公司,同發冷氣" />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="alternate icon" href="/favicon.ico" type="image/png" />

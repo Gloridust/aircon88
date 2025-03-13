@@ -320,16 +320,12 @@ const ServicesPage: NextPage = () => {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
             無論是家居、商業還是工業冷氣需求，我們都能提供專業的解決方案
           </p>
-          <a 
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              openContactModal();
-            }}
+          <button 
+            onClick={openContactModal}
             className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-white text-primary hover:bg-primary hover:text-white border border-primary transition-colors shadow-lg"
           >
             立即聯繫我們
-          </a>
+          </button>
         </div>
       </section>
 
@@ -367,17 +363,15 @@ const ServicesPage: NextPage = () => {
                 />
                 
                 <div className="mt-6 flex justify-end">
-                  <a 
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
+                  <button 
+                    onClick={() => {
                       closeModal();
                       openContactModal();
                     }}
                     className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-white text-primary hover:bg-primary hover:text-white border border-primary transition-colors shadow-md"
                   >
                     預約此服務
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
