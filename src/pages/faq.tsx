@@ -166,7 +166,6 @@ const faqData: FAQCategory[] = [
 const FAQPage: NextPage = () => {
   const { openModal: openContactModal } = useContactModal();
   const [activeCategory, setActiveCategory] = useState<number>(1);
-  const [expandedItems, setExpandedItems] = useState<Record<number, boolean>>({});
 
   return (
     <Layout
@@ -237,46 +236,17 @@ const FAQPage: NextPage = () => {
                     {category.title}相關問題
                   </h2>
                   
-                  <div className="space-y-6">
+                  <div className="space-y-8">
                     {category.items.map((item, index) => (
                       <div 
                         key={index} 
                         className="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
                       >
-                        <button
-                          onClick={() => setExpandedItems(prev => ({
-                            ...prev,
-                            [category.id]: !prev[category.id]
-                          }))}
-                          className="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition-colors"
-                        >
-                          <span className="text-lg font-semibold text-gray-900">{item.question}</span>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className={`h-5 w-5 text-gray-500 transition-transform ${
-                              expandedItems[category.id] ? 'transform rotate-180' : ''
-                            }`}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M19 9l-7 7-7-7"
-                            />
-                          </svg>
-                        </button>
-                        
-                        <div 
-                          className={`p-4 bg-white transition-all duration-300 ${
-                            expandedItems[category.id] 
-                              ? 'max-h-96 opacity-100' 
-                              : 'max-h-0 opacity-0 overflow-hidden'
-                          }`}
-                        >
-                          <p className="text-gray-600">{item.answer}</p>
+                        <div className="p-4 bg-gray-50">
+                          <h3 className="text-lg font-semibold text-gray-900">{item.question}</h3>
+                        </div>
+                        <div className="p-4 bg-white">
+                          <p className="text-gray-600 whitespace-pre-line">{item.answer}</p>
                         </div>
                       </div>
                     ))}
