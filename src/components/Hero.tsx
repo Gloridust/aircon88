@@ -30,14 +30,11 @@ export default function Hero() {
               href="tel:85231880271" 
               className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-white text-primary hover:bg-primary hover:text-white border border-white transition-colors shadow-lg"
               onClick={() => {
-                if (!navigator.userAgent.match(/(iPhone|iPod|Android|Opera Mini|IEMobile|WPDesktop)/)) {
-                  alert('即將撥打電話。如果未彈出電話，請手動聯繫：+85231880271');
-                }
+                alert('即將撥打電話：+85231880271');
               }}
             >
               立即聯繫我們
             </a>
-            
             {/* 第二個按鈕：使用透明背景和白色文字，帶白色邊框 */}
             <a 
               href="/services" 
