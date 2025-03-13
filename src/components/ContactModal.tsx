@@ -16,16 +16,16 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const handleContactClick = (type: string) => {
     switch(type) {
       case 'phone':
-        window.open('tel:+85231880271', '_blank');
+        window.open('tel:+85231880271', '_self');
         break;
       case 'mobile':
-        window.open('tel:+85262156152', '_blank');
+        window.open('tel:+85262156152', '_self');
         break;
       case 'whatsapp':
-        window.open('https://api.whatsapp.com/send?phone=85262156152&text=%E6%9F%A2%E8%A9%A2%E5%86%B7%E6%B0%A3', '_blank');
+        window.open('https://api.whatsapp.com/send?phone=85262156152&text=%E6%9F%A2%E8%A9%A2%E5%86%B7%E6%B0%A3', '_self');
         break;
       case 'email':
-        window.open('mailto:cs.aircon88@gmail.com', '_blank');
+        window.open('mailto:cs.aircon88@gmail.com', '_self');
         break;
     }
     onClose();
