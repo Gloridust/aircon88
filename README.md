@@ -46,7 +46,7 @@
 
 - **公司 Logo**: `/public/logo.png` - 用於網站導航欄和頁腳（白底不透明圖片，無需上下留白）
 - **網站圖標**: `/public/favicon.svg` - 用於瀏覽器標籤頁顯示
-- **首頁橫幅背景**: `/public/hero-bg.svg` - 首頁頂部大型橫幅背景
+- **首頁橫幅背景**: `/public/hero-bg.jpg` - 首頁頂部大型橫幅背景
 - **客戶案例圖片**: `/public/clients/` - 存放客戶案例相關圖片
   - 格式: `/public/clients/client-1.jpg`, `/public/clients/client-2.jpg` 等
   - 在 `src/components/ClientShowcase.tsx` 中配置

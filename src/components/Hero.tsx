@@ -6,7 +6,7 @@ export default function Hero() {
       {/* 背景图片 */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-bg.png"
+          src="/hero-bg.jpg"
           alt="冷氣工程服務"
           fill
           className="object-cover object-center"
@@ -27,8 +27,13 @@ export default function Hero() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             {/* 第一個按鈕：使用白色背景和藍色文字，確保在深色背景上清晰可見 */}
             <a 
-              href="/contact" 
+              href="tel:85231880271" 
               className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-white text-primary hover:bg-primary hover:text-white border border-white transition-colors shadow-lg"
+              onClick={() => {
+                if (!navigator.userAgent.match(/(iPhone|iPod|Android|Opera Mini|IEMobile|WPDesktop)/)) {
+                  alert('即將撥打電話。如果未彈出電話，請手動聯繫：+85231880271');
+                }
+              }}
             >
               立即聯繫我們
             </a>
