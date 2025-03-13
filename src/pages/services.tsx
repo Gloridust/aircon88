@@ -2,55 +2,152 @@ import { NextPage } from 'next';
 import Layout from '@/components/Layout';
 import Image from 'next/image';
 import Head from 'next/head';
-import Link from 'next/link';
+import { useState } from 'react';
+import { useContactModal } from '@/pages/_app';
 
 // 服務數據
 const services = [
   {
     id: 1,
     title: '定期保養',
-    description: '度身訂做合適的冷氣保養服務，延長設備壽命，確保運行效率，節省能源消耗。我們的專業技術人員會定期檢查冷氣系統的各個部件，及時發現並解決潛在問題。',
+    description: '度身訂做合適的冷氣保養服務，延長設備壽命，確保運行效率，節省能源消耗。',
+    detail: `
+      <h4 class="text-lg font-bold mb-3">定期保養服務內容</h4>
+      <ul class="list-disc pl-5 mb-4 space-y-2">
+        <li>每年大洗冷氣系統，以高壓噴射式藥水清洗</li>
+        <li>每月/季定期清洗隔塵網</li>
+        <li>定期檢查機件</li>
+        <li>保養期內免費上門檢查及維修冷氣系統，次數不限</li>
+      </ul>
+      <p class="mb-3">客戶如需度身訂做合適的冷氣保養服務，請致電：3188 0271</p>
+    `,
     image: '/services/maintenance.jpg',
     slug: 'maintenance'
   },
   {
     id: 2,
     title: '供應零售',
-    description: '各大品牌冷氣機銷售，包括日立、大金、三菱等知名品牌。我們提供專業的選購建議，幫助客戶選擇最適合的冷氣設備，並提供安裝及售後服務。',
+    description: '各大品牌冷氣機銷售，包括日立、大金、三菱等知名品牌。',
+    detail: `
+      <h4 class="text-lg font-bold mb-3">我們供應的產品</h4>
+      <ul class="list-disc pl-5 mb-4 space-y-2">
+        <li>大金（Daikin）</li>
+        <li>珍寶（Chunbao）</li>
+        <li>日立（Hitachi）</li>
+        <li>樂聲（Lennox）</li>
+        <li>美的（Midea）</li>
+        <li>三菱重工（Mitsubishi Heavy Industries）</li>
+        <li>三菱電機（Mitsubishi Electric）</li>
+        <li>水泵、雪種、電子板、溫度掣、壓縮機、冷卻水塔、水冷式櫃機、風機盤管等</li>
+      </ul>
+      <p class="mb-3">我們的專業顧問會根據您的空間大小、使用需求和預算，推薦最適合的產品型號。</p>
+      <p>所有產品均提供原廠保養，並可選購延長保養服務，確保您的投資得到長期保障。</p>
+    `,
     image: '/services/retail.jpg',
     slug: 'retail'
   },
   {
     id: 3,
     title: '安裝工程',
-    description: '提供各類型冷氣機安裝服務，包括分體式、窗口式、天花式等。我們的安裝團隊經驗豐富，確保安裝工程符合安全標準，並保證設備的最佳性能。',
+    description: '提供各類型冷氣機安裝服務，包括分體式、窗口式、天花式等。',
+    detail: `
+      <h4 class="text-lg font-bold mb-3">安裝工程服務範圍</h4>
+      <ul class="list-disc pl-5 mb-4 space-y-2">
+        <li>各類型冷氣機安裝 - 適合家居和小型辦公室</li>
+        <li>風機盤管安裝 - 提供高效的空氣流通</li>
+        <li>水冷式櫃機安裝 - 適合商業和辦公空間</li>
+        <li>冷卻水塔安裝 - 適合大型辦公室和商業場所</li>
+        <li>雪種銅喉安裝 - 確保冷氣系統的高效運行</li>
+        <li>去水系統安裝 - 防止漏水和異味</li>
+        <li>散熱架安裝 - 提高設備的散熱效率</li>
+        <li>冷凍水喉安裝 - 確保冷卻效果</li>
+        <li>白鐵風喉安裝 - 提供耐用的通風解決方案</li>
+        <li>抽風系統安裝 - 改善室內空氣質素</li>
+      </ul>
+      <p class="mb-3">本公司安裝各類型冷氣機，基於客戶的環境及場地、各有不同，本公司提供睇位，以實際情況作出報價，明碼實價，絕無取巧！請致電：3188 0271</p>
+      <p>本公司已購買勞工保險(高空工作)及第三者意外責任保險。</p>
+    `,
     image: '/services/installation.jpg',
     slug: 'installation'
   },
   {
     id: 4,
     title: '清洗冷氣',
-    description: '清洗各類型冷氣設備，徹底清除積塵、黴菌和細菌，改善室內空氣質素，減少過敏源。定期清洗還能提高冷氣效能，降低電費支出。',
+    description: '清洗各類型冷氣設備，徹底清除積塵、黴菌和細菌，改善室內空氣質素。',
+    detail: `
+      <h4 class="text-lg font-bold mb-3">冷氣清洗服務內容</h4>
+      <ul class="list-disc pl-5 mb-4 space-y-2">
+        <li>清洗各類型冷氣機、中央冷氣系統、水冷式櫃機運炮、大型水塔、隔塵網、水泵、水喉、水盤、風喉、風管、通風系統等</li>
+      </ul>
+      <p class="mb-3">我們使用環保清潔劑和專業設備，確保清洗效果徹底且不損壞設備。</p>
+      <p>建議每3-6個月進行一次專業清洗，特別是在多塵、高濕度或有過敏人士的環境中。</p>
+    `,
     image: '/services/cleaning.jpg',
     slug: 'cleaning'
   },
   {
     id: 5,
     title: '檢查維修',
-    description: '檢查及維修冷氣系統，快速診斷故障原因，提供專業維修服務。我們的技術團隊配備先進工具，能夠處理各種冷氣問題，確保設備恢復正常運作。',
+    description: '檢查及維修冷氣系統，快速診斷故障原因，提供專業維修服務。',
+    detail: `
+      <h4 class="text-lg font-bold mb-3">檢查及維修服務</h4>
+      <ul class="list-disc pl-5 mb-4 space-y-2">
+        <li>檢查包括，散熱風扇機件及啤呤、分體機壓縮器，測試雪種壓力值、出風量、出風溫度及回風溫度、送風機摩打，壓縮機及散熱扇的情況、電壓值、電流值及排水系統的保溫情況等</li>
+        <li>維修包括，設置冷氣開關掣、包保溫、加裝水泵、摩打、電容器、電子板、更換壓縮機、更換室內機及室外機等</li>
+        <li>如冷氣機出現異常狀況，本公司提供上門檢查冷氣服務，檢查費$450起</li>
+        <li>經檢查後客戶如選擇本公司進行維修服務，檢查費可於維修費用內扣減(洗機或入雪種除外)</li>
+      </ul>
+      <p class="mb-3">我們的技術人員配備先進診斷工具，能夠快速準確地找出故障原因。</p>
+      <p>維修服務包括90天保養，確保維修後的設備能夠穩定運行。</p>
+    `,
     image: '/services/repair.png',
     slug: 'repair'
   },
   {
     id: 6,
     title: '牌照顧問',
-    description: '通風証明、年檢、小型工程等牌照申請顧問服務。我們熟悉相關法規要求，協助客戶辦理各類冷氣工程所需的牌照和證明，確保工程合法合規。',
+    description: '通風証明、年檢、小型工程等牌照申請顧問服務。',
+    detail: `
+      <h4 class="text-lg font-bold mb-3">牌照顧問服務範圍</h4>
+      <ul class="list-disc pl-5 mb-4 space-y-2">
+        <li>通風証明</li>
+        <li>年檢</li>
+        <li>小型工程</li>
+        <li>小型工程文件（1,2,3級）</li>
+        <li>核證食物業處所沒有違例建築工程 (違建工程) (UBW-1/UBW-2)</li>
+        <li>結構工程師結構、負重報告 (AP/RSE)</li>
+        <li>符合規定証明書A (衛生規定)</li>
+        <li>符合規定証明書B (樓宇結構規定)</li>
+        <li>符合規定証明書C (消防安全規定)</li>
+        <li>符合規定証明書D (通風設施規定)</li>
+        <li>通風系統數據表</li>
+        <li>消防、通風週年檢查証明書 (FSI 251/AIC)</li>
+        <li>電力安全証明書 (WR1 / WR2)</li>
+        <li>氣體 (煤氣/石油氣) 開工及完工証明文件</li>
+        <li>窗戶檢驗證明書</li>
+      </ul>
+      <p class="mb-3">我們熟悉香港各政府部門的法規要求，能夠協助客戶順利完成各類牌照申請。</p>
+      <p>我們的顧問團隊包括註冊工程師和專業技術人員，確保所有文件和工程符合法定標準。</p>
+    `,
     image: '/services/license.jpg',
     slug: 'license'
   }
 ];
 
 const ServicesPage: NextPage = () => {
+  const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
+  const [showModal, setShowModal] = useState(false);
+  const { openModal: openContactModal } = useContactModal();
+
+  const openServiceModal = (service: typeof services[0]) => {
+    setSelectedService(service);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <Layout>
       <Head>
@@ -92,7 +189,8 @@ const ServicesPage: NextPage = () => {
             {services.map((service) => (
               <div 
                 key={service.id} 
-                className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg hover:scale-105"
+                className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg hover:scale-105 cursor-pointer"
+                onClick={() => openServiceModal(service)}
               >
                 <div className="relative h-56">
                   <Image
@@ -109,15 +207,14 @@ const ServicesPage: NextPage = () => {
                   <p className="text-gray-600 mb-4">
                     {service.description}
                   </p>
-                  <Link 
-                    href={`/services/${service.slug}`}
+                  <button 
                     className="inline-flex items-center text-primary hover:text-secondary font-semibold py-1 border-b border-primary hover:border-secondary transition-colors"
                   >
                     了解更多
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
-                  </Link>
+                  </button>
                 </div>
               </div>
             ))}
@@ -227,13 +324,7 @@ const ServicesPage: NextPage = () => {
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              const contactModal = document.getElementById('contact-modal');
-              if (contactModal && typeof window !== 'undefined') {
-                const event = new CustomEvent('open-contact-modal');
-                window.dispatchEvent(event);
-              } else {
-                window.location.href = '/contact';
-              }
+              openContactModal();
             }}
             className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-white text-primary hover:bg-primary hover:text-white border border-primary transition-colors shadow-lg"
           >
@@ -241,6 +332,58 @@ const ServicesPage: NextPage = () => {
           </a>
         </div>
       </section>
+
+      {/* 服務詳情彈窗 */}
+      {showModal && selectedService && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/60" onClick={closeModal}></div>
+          <div className="relative bg-white rounded-lg shadow-xl max-w-3xl w-full p-6 animate-fadeIn overflow-y-auto max-h-[90vh]">
+            <button 
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="md:w-1/3">
+                <div className="relative h-48 md:h-full rounded-lg overflow-hidden">
+                  <Image
+                    src={selectedService.image}
+                    alt={selectedService.title}
+                    fill
+                    className="object-cover object-center"
+                  />
+                </div>
+              </div>
+              
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{selectedService.title}</h3>
+                <div 
+                  className="prose prose-lg max-w-none text-gray-600"
+                  dangerouslySetInnerHTML={{ __html: selectedService.detail }}
+                />
+                
+                <div className="mt-6 flex justify-end">
+                  <a 
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      closeModal();
+                      openContactModal();
+                    }}
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-white text-primary hover:bg-primary hover:text-white border border-primary transition-colors shadow-md"
+                  >
+                    預約此服務
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </Layout>
   );
 };

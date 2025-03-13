@@ -3,10 +3,12 @@ import Link from 'next/link';
 
 interface ButtonProps {
   children: ReactNode;
-  href: string;
+  href?: string;
   variant?: 'primary' | 'secondary';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
+  onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export default function Button({ 
@@ -14,7 +16,9 @@ export default function Button({
   href, 
   variant = 'primary', 
   size = 'md',
-  className = ''
+  className = '',
+  onClick,
+  type = 'button'
 }: ButtonProps) {
   // 基本樣式
   const baseStyles = "inline-flex items-center justify-center rounded-md font-semibold transition-colors shadow-md";
@@ -37,9 +41,23 @@ export default function Button({
   // 組合所有樣式
   const buttonStyles = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;
   
+  // 如果提供了href，則渲染為Link元素
+  if (href) {
+    return (
+      <Link href={href} className={buttonStyles}>
+        {children}
+      </Link>
+    );
+  }
+  
+  // 否則渲染為button元素
   return (
-    <Link href={href} className={buttonStyles}>
+    <button 
+      type={type} 
+      className={buttonStyles} 
+      onClick={onClick}
+    >
       {children}
-    </Link>
+    </button>
   );
 } 

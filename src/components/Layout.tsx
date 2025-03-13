@@ -2,6 +2,8 @@ import { ReactNode } from 'react';
 import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import ContactModal from './ContactModal';
+import { useContactModal } from '@/pages/_app';
 
 interface LayoutProps {
   children: ReactNode;
@@ -14,6 +16,8 @@ export default function Layout({
   title = '同發冷氣工程有限公司 - 專業冷氣安裝、維修及保養服務',
   description = '同發冷氣工程有限公司提供專業冷氣安裝、維修及保養服務，服務香港全區，專業可靠，價格合理。'
 }: LayoutProps) {
+  const { isOpen, closeModal } = useContactModal();
+
   return (
     <>
       <Head>
@@ -32,6 +36,7 @@ export default function Layout({
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <ContactModal isOpen={isOpen} onClose={closeModal} />
       </div>
     </>
   );
