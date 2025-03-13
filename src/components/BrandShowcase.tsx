@@ -38,7 +38,7 @@ export default function BrandShowcase() {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-10">
           {brands.map((brand, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg p-2 flex items-center justify-center h-30 w-40 transition-transform hover:scale-105">
+            <div key={index} className="bg-gray-50 rounded-lg p-2 flex items-center justify-center h-33 w-44 transition-transform hover:scale-105">
               <div className="relative w-full h-full">
                 <Image
                   src={brand.logo}
