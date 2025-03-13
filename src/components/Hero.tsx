@@ -24,11 +24,11 @@ export default function Hero() {
           <p className="mt-6 text-lg text-white max-w-lg drop-shadow-md">
             同發冷氣工程有限公司提供全方位冷氣安裝、維修及保養服務，服務香港全區，專業可靠，價格合理。
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
             {/* 第一個按鈕：使用白色背景和藍色文字，確保在深色背景上清晰可見 */}
             <a 
               href="tel:85231880271" 
-              className="w-[160px] inline-flex items-center justify-center px-5 py-2.5 rounded-md font-semibold bg-white text-primary hover:bg-primary hover:text-white border border-white transition-colors shadow-lg"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-white text-primary hover:bg-primary hover:text-white border border-white transition-colors shadow-lg"
               onClick={() => {
                 if (!navigator.userAgent.match(/(iPhone|iPod|Android|Opera Mini|IEMobile|WPDesktop)/)) {
                   alert('即將撥打電話。如果未彈出電話，請手動聯繫：+85231880271');
@@ -41,7 +41,7 @@ export default function Hero() {
             {/* 第二個按鈕：使用透明背景和白色文字，帶白色邊框 */}
             <a 
               href="/services" 
-              className="w-[160px] inline-flex items-center justify-center px-5 py-2.5 rounded-md font-semibold bg-transparent text-white hover:bg-white hover:text-primary border border-white transition-colors shadow-lg"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold bg-transparent text-white hover:bg-white hover:text-primary border border-white transition-colors shadow-lg"
             >
               了解我們的服務
             </a>
