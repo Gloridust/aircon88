@@ -22,7 +22,8 @@ const PricingPage: NextPage = () => {
       ],
       note: '( 任何匹數 )',
       price: '$550起',
-      discount: '優惠期間兩部以上享有優惠'
+      discount: '優惠期間兩部以上享有優惠',
+      image: '/pricing/p1.png'
     },
     {
       type: '掛牆分體機',
@@ -38,7 +39,8 @@ const PricingPage: NextPage = () => {
       ],
       note: '( 任何匹數 )',
       price: '$600起',
-      discount: '優惠期間兩部以上享有優惠'
+      discount: '優惠期間兩部以上享有優惠',
+      image: '/pricing/p2.png'
     },
     {
       type: '卡式天花分體機',
@@ -55,7 +57,8 @@ const PricingPage: NextPage = () => {
       ],
       note: '( 任何匹數 )',
       price: '$700起',
-      discount: '優惠期間兩部以上享有優惠'
+      discount: '優惠期間兩部以上享有優惠',
+      image: '/pricing/p3.png'
     },
     {
       type: '中央冷氣',
@@ -71,7 +74,8 @@ const PricingPage: NextPage = () => {
       ],
       note: '( 任何匹數 )',
       price: '$700起',
-      discount: '優惠期間兩部以上享有優惠'
+      discount: '優惠期間兩部以上享有優惠',
+      image: '/pricing/p4.png'
     },
     {
       type: '口琴分體機',
@@ -87,7 +91,8 @@ const PricingPage: NextPage = () => {
       ],
       note: '( 任何匹數 )',
       price: '$700起',
-      discount: '優惠期間兩部以上享有優惠'
+      discount: '優惠期間兩部以上享有優惠',
+      image: '/pricing/p5.png'
     },
     {
       type: '鮮風機',
@@ -99,7 +104,8 @@ const PricingPage: NextPage = () => {
       ],
       note: '( 任何匹數 )',
       price: '$500起',
-      discount: '優惠期間兩部以上享有優惠'
+      discount: '優惠期間兩部以上享有優惠',
+      image: '/pricing/p6.png'
     },
     {
       type: '風閘',
@@ -111,7 +117,8 @@ const PricingPage: NextPage = () => {
       ],
       note: '( 任何匹數 )',
       price: '$500起',
-      discount: '優惠期間兩部以上享有優惠'
+      discount: '優惠期間兩部以上享有優惠',
+      image: '/pricing/p7.png'
     },
     {
       type: '櫃機',
@@ -126,7 +133,8 @@ const PricingPage: NextPage = () => {
       ],
       note: '( 按匹數 )',
       price: '另議',
-      discount: '優惠期間兩部以上享有優惠'
+      discount: '優惠期間兩部以上享有優惠',
+      image: '/pricing/p8.png'
     },
     {
       type: '水塔',
@@ -141,7 +149,8 @@ const PricingPage: NextPage = () => {
       ],
       note: '( 按噸數 )',
       price: '另議',
-      discount: '優惠期間兩部以上享有優惠'
+      discount: '優惠期間兩部以上享有優惠',
+      image: '/pricing/p9.png'
     }
   ];
 
@@ -149,19 +158,23 @@ const PricingPage: NextPage = () => {
   const inspectionPrices = [
     {
       types: ['窗口機', '掛牆分體機', '卡式天花分體機', '中央冷氣', '鮮風機', '風閘'],
-      price: '$500'
+      price: '$500',
+      image: '/pricing/p10.png'
     },
     {
       types: ['水塔', '櫃機'],
-      price: '$800'
+      price: '$800',
+      image: '/pricing/p11.png'
     },
     {
       types: ['VRV'],
-      price: '$2000'
+      price: '$2000',
+      image: '/pricing/p12.png'
     },
     {
       types: ['中央冷凍主機'],
-      price: '$3500'
+      price: '$3500',
+      image: '/pricing/p13.png'
     }
   ];
 
@@ -218,6 +231,14 @@ const PricingPage: NextPage = () => {
                     <td className="py-4 px-4 text-sm font-medium text-gray-900">
                       {item.type}
                       <p className="text-xs text-gray-500 mt-1">{item.note}</p>
+                      <div className="mt-3 relative w-full h-32">
+                        <Image
+                          src={item.image}
+                          alt={`${item.type}圖片`}
+                          fill
+                          className="object-left object-contain"
+                        />
+                      </div>
                     </td>
                     <td className="py-4 px-4">
                       <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
@@ -258,6 +279,14 @@ const PricingPage: NextPage = () => {
                   <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                     <td className="py-4 px-4 text-sm font-medium text-gray-900">
                       {item.types.join('、')}
+                      <div className="mt-3 relative w-full h-32">
+                        <Image
+                          src={item.image}
+                          alt={`${item.types[0]}等檢查圖片`}
+                          fill
+                          className="object-left object-contain"
+                        />
+                      </div>
                     </td>
                     <td className="py-4 px-4 text-center">
                       <p className="text-lg font-bold text-primary">{item.price}</p>
@@ -276,6 +305,14 @@ const PricingPage: NextPage = () => {
               </div>
               <div className="p-6">
                 <p className="text-gray-600 mb-4">根據不同機種、不同環境報價。</p>
+                <div className="relative w-full h-40 mb-4">
+                  <Image
+                    src="/pricing/p14.png"
+                    alt="冷氣安裝圖片"
+                    fill
+                    className="object-left object-contain"
+                  />
+                </div>
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <p className="text-center font-semibold text-gray-800">
                     詳情可致電或WhatsApp查詢
@@ -298,6 +335,14 @@ const PricingPage: NextPage = () => {
               </div>
               <div className="p-6">
                 <p className="text-gray-600 mb-4">根據不同客戶要求，量身訂造服務內容。</p>
+                <div className="relative w-full h-40 mb-4">
+                  <Image
+                    src="/pricing/p15.png"
+                    alt="冷氣保養圖片"
+                    fill
+                    className="object-left object-contain"
+                  />
+                </div>
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <p className="text-center font-semibold text-gray-800">
                     詳情可致電或WhatsApp查詢

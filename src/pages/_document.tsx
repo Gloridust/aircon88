@@ -8,7 +8,7 @@ export default function Document() {
         <meta name="keywords" content="冷氣保養,冷氣檢查,檢查冷氣,VRV,VRF,大金,大金VRV,冷氣維修,維修冷氣,洗冷氣,冷氣工程,冷氣清洗,冷氣,清洗冷氣,冷氣安裝,冷氣公司,香港冷氣,空調服務,冷氣工程公司,同發冷氣" />
         <meta name="robots" content="index, follow" />
         <meta charSet="utf-8" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" type="image/svg+xml" />
         <link rel="alternate icon" href="/favicon.ico" type="image/png" />
         <meta name="google-site-verification" content="您的Google站点验证码" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +23,7 @@ export default function Document() {
               "@type": "LocalBusiness",
               "name": "同發冷氣工程有限公司",
               "alternateName": "Tung Fat Air Conditioner & Engineering Co LTD",
-              "image": "https://aircon88.innovisle.net/logo.png",
+              "image": "https://aircon88.innovisle.net/logo.jpeg",
               "@id": "https://aircon88.innovisle.net",
               "url": "https://aircon88.innovisle.net",
               "telephone": "31880271",

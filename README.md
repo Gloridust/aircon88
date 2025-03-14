@@ -44,8 +44,8 @@
 
 網站使用的圖片文件存放在以下路徑：
 
-- **公司 Logo**: `/public/logo.png` - 用於網站導航欄和頁腳（白底不透明圖片，無需上下留白）
-- **網站圖標**: `/public/favicon.svg` - 用於瀏覽器標籤頁顯示
+- **公司 Logo**: `/public/logo.jpeg` - 用於網站導航欄和頁腳（白底不透明圖片，無需上下留白）
+- **網站圖標**: `/public/favicon.ico` - 用於瀏覽器標籤頁顯示
 - **首頁橫幅背景**: `/public/hero-bg.jpg` - 首頁頂部大型橫幅背景
 - **客戶案例圖片**: `/public/clients/` - 存放客戶案例相關圖片
   - 格式: `/public/clients/client-1.jpg`, `/public/clients/client-2.jpg` 等

@@ -49,8 +49,8 @@ const Home: NextPage = () => {
         <meta name="keywords" content="冷氣保養,冷氣檢查,檢查冷氣,VRV,VRF,大金,大金VRV,冷氣維修,維修冷氣,洗冷氣,冷氣工程,冷氣清洗,冷氣,清洗冷氣,冷氣安裝,冷氣公司,同發冷氣,香港冷氣,空調服務" />
         <link rel="canonical" href="https://aircon88.innovisle.net" />
         <meta property="og:url" content="https://aircon88.innovisle.net" />
-        <meta property="og:image" content="https://aircon88.innovisle.net/logo.png" />
-        <meta name="twitter:image" content="https://aircon88.innovisle.net/logo.png" />
+        <meta property="og:image" content="https://aircon88.innovisle.net/logo.jpeg" />
+        <meta name="twitter:image" content="https://aircon88.innovisle.net/logo.jpeg" />
       </Head>
       <Hero />
       <ClientShowcase />

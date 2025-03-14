@@ -120,10 +120,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-gray-400">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p>&copy; {currentYear} 同發冷氣工程有限公司. 版權所有.</p>
-            <div className="mt-3 md:mt-0 space-x-4">
-              <Link href="/sitemap.xml" className="text-gray-400 hover:text-primary" target="_blank">
-                網站地圖
-              </Link>
+            <div className="mt-3 md:mt-0">
               <Link href="https://www.google.com/maps?q=屯門新平街2號屯門工業中心A座10樓A1室" className="text-gray-400 hover:text-primary" target="_blank" rel="noopener noreferrer">
                 在Google地圖上查看
               </Link>

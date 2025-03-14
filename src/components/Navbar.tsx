@@ -22,7 +22,7 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center">
               <Image
-                src="/logo.png"
+                src="/logo.jpeg"
                 alt="同發冷氣工程有限公司"
                 width={180}
                 height={40}
