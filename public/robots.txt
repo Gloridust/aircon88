@@ -7,6 +7,4 @@ Sitemap: https://aircon88.innovisle.net/sitemap.xml
 
 # 禁止访问特定目录
 Disallow: /api/
-Disallow: /_next/
-Disallow: /*/_next/
 Disallow: /404 
