@@ -26,11 +26,33 @@ const Home: NextPage = () => {
           "addressLocality": "屯門",
           "addressRegion": "新界",
           "addressCountry": "HK"
-        }
+        },
+        "telephone": "31880271",
+        "email": "cs.aircon88@gmail.com",
+        "priceRange": "$$"
       },
-      "serviceType": ["冷氣安裝", "冷氣維修", "冷氣保養", "冷氣清洗", "大金VRV", "VRF系統", "冷氣檢查"],
-      "areaServed": "香港",
-      "description": "同發冷氣工程提供專業冷氣安裝、維修、保養、清洗及檢查服務，大金VRV/VRF系統專家，服務香港全區，專業可靠，價格合理。"
+      "serviceType": ["冷氣安裝", "冷氣維修", "冷氣保養", "冷氣清洗", "大金VRV", "VRF系統", "冷氣檢查", "中央冷氣", "分體式冷氣", "窗口機"],
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 22.3908,
+          "longitude": 113.9725
+        },
+        "geoRadius": "50km"
+      },
+      "description": "同發冷氣工程提供專業冷氣安裝、維修、保養、清洗及檢查服務，大金VRV/VRF系統專家，服務香港全區，專業可靠，價格合理。",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "HKD",
+        "lowPrice": "500",
+        "highPrice": "3500",
+        "offerCount": "9"
+      },
+      "brand": {
+        "@type": "Brand",
+        "name": "同發冷氣工程"
+      }
     });
     document.head.appendChild(script);
 
@@ -42,15 +64,25 @@ const Home: NextPage = () => {
 
   return (
     <Layout
-      title="同發冷氣工程有限公司 | 專業冷氣安裝維修保養清洗 | 大金VRV/VRF系統專家"
-      description="同發冷氣工程提供專業冷氣安裝、維修、保養、清洗及檢查服務，大金VRV/VRF系統專家，服務香港全區。冷氣工程全包，專營各大冷氣品牌，包括大金、日立、三菱等。"
+      title="同發冷氣工程有限公司 | 專業冷氣保養、冷氣檢查、冷氣維修等冷氣工程服務 香港冷氣服務"
+      description="同發冷氣工程提供專業冷氣安裝、冷氣維修、冷氣保養、冷氣清洗及檢查服務，大金VRV/VRF系統專家，服務香港全區。冷氣工程全包，專營各大冷氣品牌，包括大金、日立、三菱等。屯門冷氣公司，新界冷氣服務。"
     >
       <Head>
-        <meta name="keywords" content="冷氣保養,冷氣檢查,檢查冷氣,VRV,VRF,大金,大金VRV,冷氣維修,維修冷氣,洗冷氣,冷氣工程,冷氣清洗,冷氣,清洗冷氣,冷氣安裝,冷氣公司,同發冷氣,香港冷氣,空調服務" />
+        <meta name="keywords" content="冷氣保養,冷氣檢查,檢查冷氣,VRV系統,VRF系統,大金冷氣,大金VRV,冷氣維修,維修冷氣,洗冷氣,冷氣工程,冷氣清洗,冷氣機,清洗冷氣,冷氣安裝,冷氣公司,香港冷氣,空調服務,冷氣工程公司,同發冷氣,屯門冷氣,新界冷氣,商業冷氣,住宅冷氣,中央冷氣,分體式冷氣,窗口機,掛牆分體機,天花分體機" />
         <link rel="canonical" href="https://aircon88.innovisle.net" />
         <meta property="og:url" content="https://aircon88.innovisle.net" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="同發冷氣工程有限公司 | 專業冷氣安裝維修保養清洗 | 大金VRV/VRF系統專家" />
+        <meta property="og:description" content="同發冷氣工程提供專業冷氣安裝、冷氣維修、冷氣保養、冷氣清洗及檢查服務，大金VRV/VRF系統專家，服務香港全區。" />
         <meta property="og:image" content="https://aircon88.innovisle.net/logo.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="https://aircon88.innovisle.net/logo.jpeg" />
+        <meta name="twitter:title" content="同發冷氣工程有限公司 | 專業冷氣服務" />
+        <meta name="twitter:description" content="專業冷氣安裝、維修、保養、清洗及檢查服務，大金VRV/VRF系統專家" />
+        <meta name="geo.region" content="HK" />
+        <meta name="geo.placename" content="Tuen Mun" />
+        <meta name="geo.position" content="22.3908;113.9725" />
+        <meta name="ICBM" content="22.3908, 113.9725" />
       </Head>
       <Hero />
       <ClientShowcase />

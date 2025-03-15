@@ -4,8 +4,8 @@ export default function Document() {
   return (
     <Html lang="zh-HK">
       <Head>
-        <meta name="description" content="同發冷氣工程有限公司 - 專業冷氣安裝、維修、保養、清洗及檢查服務，大金VRV/VRF系統專家，服務香港全區" />
-        <meta name="keywords" content="冷氣保養,冷氣檢查,檢查冷氣,VRV,VRF,大金,大金VRV,冷氣維修,維修冷氣,洗冷氣,冷氣工程,冷氣清洗,冷氣,清洗冷氣,冷氣安裝,冷氣公司,香港冷氣,空調服務,冷氣工程公司,同發冷氣" />
+        <meta name="description" content="同發冷氣工程有限公司 - 專業冷氣保養、冷氣檢查、冷氣維修等冷氣工程服務，服務香港全區" />
+        <meta name="keywords" content="冷氣保養,冷氣檢查,檢查冷氣,VRV系統,VRF系統,大金冷氣,大金VRV,冷氣維修,維修冷氣,洗冷氣,冷氣工程,冷氣清洗,冷氣機,清洗冷氣,冷氣安裝,冷氣公司,香港冷氣,空調服務,冷氣工程公司,同發冷氣,屯門冷氣,新界冷氣,商業冷氣,住宅冷氣,中央冷氣,分體式冷氣,窗口機,掛牆分體機,天花分體機" />
         <meta name="robots" content="index, follow" />
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" type="image/svg+xml" />
@@ -122,6 +122,17 @@ export default function Document() {
         />
       </Head>
       <body className="antialiased font-sans">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe 
+            src="https://www.googletagmanager.com/ns.html?id=GTM-ND8XZG8K"
+            height="0" 
+            width="0" 
+            style={{ display: 'none', visibility: 'hidden' }}
+          ></iframe>
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+        
         <Main />
         <NextScript />
       </body>

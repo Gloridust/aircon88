@@ -6,10 +6,11 @@ import Head from "next/head";
 import Script from 'next/script';
 import { useRouter } from 'next/router';
 
-// 添加Google Analytics的全局类型定义
+// 添加Google Tag Manager的全局类型定义
 declare global {
   interface Window {
     gtag: (command: string, target: string, config?: object) => void;
+    dataLayer: Array<Record<string, unknown>>;
   }
 }
 
@@ -39,12 +40,13 @@ export default function App({ Component, pageProps }: AppProps) {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const router = useRouter();
 
-  // Google Analytics页面跟踪
+  // 頁面路由變化時通知 GTM
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('config', 'G-XXXXXXXXXX', {
-          page_path: url,
+      if (typeof window !== 'undefined' && window.dataLayer) {
+        window.dataLayer.push({
+          event: 'pageview',
+          page: url,
         });
       }
     };
@@ -63,19 +65,22 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      {/* Google Analytics 代码 */}
+      
+      {/* Google Tag Manager */}
       <Script
+        id="gtm-script"
         strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-ND8XZG8K');
+          `
+        }}
       />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-XXXXXXXXXX');
-        `}
-      </Script>
+      
       <ContactModalContext.Provider
         value={{
           isOpen: isContactModalOpen,
