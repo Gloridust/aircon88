@@ -72,7 +72,7 @@ const AboutPage: NextPage = () => {
       <div className="relative bg-gray-900 py-16 md:py-24">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/about-banner.png"
+            src="/about-banner.jpg"
             alt="關於同發冷氣工程"
             fill
             className="object-cover object-center opacity-30"

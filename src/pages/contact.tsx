@@ -21,7 +21,7 @@ const ContactPage: NextPage = () => {
       <div className="relative bg-gray-900 py-16 md:py-24">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/contact-banner.png"
+            src="/contact-banner.jpg"
             alt="聯繫同發冷氣工程"
             fill
             className="object-cover object-center opacity-30"
