@@ -174,7 +174,7 @@ const FAQPage: NextPage = () => {
     >
       <Head>
         <meta name="keywords" content="冷氣FAQ,冷氣常見問題,冷氣保養,冷氣檢查,檢查冷氣,VRV系統,VRF系統,大金VRV,冷氣維修,維修冷氣,洗冷氣,冷氣清洗,冷氣安裝" />
-        <link rel="canonical" href="https://aircon88.innovisle.net/faq" />
+        <link rel="canonical" href="https://www.aircon88.com/faq" />
       </Head>
 
       {/* 頂部橫幅 */}

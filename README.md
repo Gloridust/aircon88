@@ -2,7 +2,7 @@
 
 這是同發冷氣工程有限公司的官方網站源代碼。該網站使用 Next.js 和 Tailwind CSS 構建，提供了公司服務、案例展示和聯繫方式等信息。
 
-[https://aircon88.innovisle.net/](https://aircon88.innovisle.net/)
+[https://www.aircon88.com/](https://www.aircon88.com/)
 
 ## 技術棧
 

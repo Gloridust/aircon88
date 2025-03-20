@@ -23,9 +23,9 @@ export default function Document() {
               "@type": "LocalBusiness",
               "name": "同發冷氣工程有限公司",
               "alternateName": "Tung Fat Air Conditioner & Engineering Co LTD",
-              "image": "https://aircon88.innovisle.net/logo.jpeg",
-              "@id": "https://aircon88.innovisle.net",
-              "url": "https://aircon88.innovisle.net",
+              "image": "https://www.aircon88.com/logo.jpeg",
+              "@id": "https://www.aircon88.com",
+              "url": "https://www.aircon88.com",
               "telephone": "31880271",
               "address": {
                 "@type": "PostalAddress",
@@ -125,7 +125,7 @@ export default function Document() {
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe 
-            src="https://www.googletagmanager.com/ns.html?id=GTM-ND8XZG8K"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WTX4253"
             height="0" 
             width="0" 
             style={{ display: 'none', visibility: 'hidden' }}

@@ -31,7 +31,7 @@ export default function Layout({
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="keywords" content="冷氣保養,冷氣檢查,檢查冷氣,VRV,VRF,大金,大金VRV,冷氣維修,維修冷氣,洗冷氣,冷氣工程,冷氣清洗,冷氣,清洗冷氣,冷氣安裝,冷氣公司" />
-        <link rel="canonical" href="https://aircon88.innovisle.net" />
+        <link rel="canonical" href="https://www.aircon88.com" />
       </Head>
       
       <div className="flex flex-col min-h-screen">

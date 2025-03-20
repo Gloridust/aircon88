@@ -65,7 +65,7 @@ const AboutPage: NextPage = () => {
     >
       <Head>
         <meta name="keywords" content="冷氣保養,冷氣檢查,檢查冷氣,VRV,VRF,大金,大金VRV,冷氣維修,維修冷氣,洗冷氣,冷氣工程,冷氣清洗,冷氣安裝,冷氣公司,同發冷氣,冷氣工程公司" />
-        <link rel="canonical" href="https://aircon88.innovisle.net/about" />
+        <link rel="canonical" href="https://www.aircon88.com/about" />
       </Head>
 
       {/* 頂部橫幅 */}
