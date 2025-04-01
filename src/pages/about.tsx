@@ -120,6 +120,59 @@ const AboutPage: NextPage = () => {
                   <p className="text-gray-700 leading-relaxed">
                     聘請資深的技術人員，更是接受過陪訓及持有相關的專業資格，所有工程均由本公司技術人員直接處理，並提供免費上門睇位服務，明碼實價，絶不含隱藏收費!
                   </p>
+                  
+                  <div className="mt-8 pt-8 border-t border-gray-200">
+                    <p className="mb-4 text-gray-700 leading-relaxed">
+                      在現代社會，冷氣系統已成為家庭、辦公室、商場及工業場所不可或缺的設備。無論是炎熱的夏季還是需要恆溫控制的特殊環境，冷氣設備的效能與穩定性直接影響生活品質與工作效率。而這背後，從規劃、安裝到維護，為客戶提供全方位的解決方案。
+                    </p>
+                    
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 mt-6">專業冷氣公司的核心服務</h3>
+                    
+                    <h4 className="text-lg font-semibold text-gray-800 mb-2">1. 冷氣安裝與設計</h4>
+                    <p className="mb-4 text-gray-700 leading-relaxed">
+                      專業冷氣公司不僅提供設備銷售，更注重「因地制宜」的設計規劃。經驗豐富的工程團隊會根據空間大小、使用需求（如居家、商業或工業用途）、預算限制及節能要求，量身打造最適合的冷氣系統方案。例如，大型商場需採用中央空調系統，而小型辦公室則可選擇分體式或多聯式冷氣，確保效能與成本的平衡。
+                    </p>
+                    
+                    <h4 className="text-lg font-semibold text-gray-800 mb-2">2. 維修與保養服務</h4>
+                    <p className="mb-4 text-gray-700 leading-relaxed">
+                      冷氣設備長期運轉難免出現故障或效能下降。專業冷氣公司提供即時維修服務，並透過定期保養（如清洗濾網、檢查冷媒壓力、潤滑風扇馬達等），延長設備壽命，避免突發停機造成的損失。部分公司更推出「年度保養合約」，為客戶省去後顧之憂。
+                    </p>
+
+                    <h4 className="text-lg font-semibold text-gray-800 mb-2">3. 節能改造與技術諮詢</h4>
+                    <p className="mb-4 text-gray-700 leading-relaxed">
+                      隨著環保意識抬頭，許多企業希望透過冷氣系統升級降低碳排放與電費支出。專業公司能評估既有設備的能耗問題，建議更換變頻冷氣、加裝智能溫控系統，或導入熱回收技術，協助客戶實現綠色轉型。
+                    </p>
+
+                    <h4 className="text-lg font-semibold text-gray-800 mb-2">4. 特殊環境解決方案</h4>
+                    <p className="mb-4 text-gray-700 leading-relaxed">
+                      針對實驗室、數據中心、醫院等對溫度與濕度敏感的特殊場所，專業冷氣公司能提供精密空調設計，確保環境參數穩定，保障設備與人員安全。
+                    </p>
+
+                    <h4 className="text-lg font-semibold text-gray-800 mb-2">5. 技術團隊認證</h4>
+                    <p className="mb-4 text-gray-700 leading-relaxed">
+                      優質冷氣公司擁有認證的技術人員，並定期接受原廠培訓，熟悉各大品牌（如大金冷氣、日立冷氣、三菱電機冷氣、開利冷氣、三菱重工冷氣、特靈冷氣、約克冷氣、珍寶冷氣、富士通冷氣、新晃冷氣、三星冷氣、東芝冷氣，美的冷氣、海信冷氣、樂信冷氣、樂聲冷氣、海爾冷氣、格力冷氣等）的設備特性，確保服務品質符合國際標準。
+                    </p>
+
+                    <h4 className="text-lg font-semibold text-gray-800 mb-2">6. 原廠零件與保固</h4>
+                    <p className="mb-4 text-gray-700 leading-relaxed">
+                      使用原廠零件進行維修，避免劣質替代品損害設備效能。同時，專業公司通常提供完善的保固服務，讓客戶權益獲得雙重保障。
+                    </p>
+
+                    <h4 className="text-lg font-semibold text-gray-800 mb-2">7. 快速響應與客製化服務</h4>
+                    <p className="mb-4 text-gray-700 leading-relaxed">
+                      緊急故障時，專業團隊能24小時即時到場處理。此外，從報價、施工到驗收，全程透明化溝通，滿足客戶的個性化需求。
+                    </p>
+
+                    <h4 className="text-lg font-semibold text-gray-800 mb-2">8. 成本效益最大化</h4>
+                    <p className="mb-4 text-gray-700 leading-relaxed">
+                      透過精準的負荷計算與系統設計，專業公司能避免「過度安裝」造成的浪費，並在後續運維中協助降低能耗，長期節省客戶開支。
+                    </p>
+
+                    <h4 className="text-lg font-semibold text-gray-800 mb-2">9. 全方位服務項目</h4>
+                    <p className="mb-4 text-gray-700 leading-relaxed">
+                      提供服務包括：VRV、VRF、中央冷氣、多聯機、冷氣安裝、安裝冷氣、裝冷氣、安冷氣、洗冷氣、清洗冷氣、冷氣清洗、冷氣保養、保養冷氣、冷氣維修、維修冷氣、修冷氣、整冷氣等全方位服務。
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
