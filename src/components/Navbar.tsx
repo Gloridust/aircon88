@@ -6,6 +6,7 @@ const navItems = [
   { name: '首頁', href: '/' },
   { name: '公司簡介', href: '/about' },
   { name: '業務範圍', href: '/services' },
+  { name: '工程案例', href: '/projects' },
   { name: '服務價目', href: '/pricing' },
   { name: '我們客戶', href: '/clients' },
   { name: '常見問題', href: '/faq' },

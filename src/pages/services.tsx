@@ -14,6 +14,14 @@ const services = [
     detail: `
       <h4 class="text-lg font-bold mb-3">定期保養服務內容</h4>
       
+      <ul class="list-disc pl-5 mb-4 space-y-2">
+        <li>每年大洗冷氣系統，以高壓噴射式藥水清洗</li>
+        <li>每月/季定期清洗隔塵網</li>
+        <li>定期檢查機件</li>
+        <li>VRV/VRF系統專業檢查維護</li>
+        <li>保養期內免費上門檢查及維修冷氣系統，次數不限</li>
+      </ul>
+      <h4 class="text-lg font-bold mb-3">保養建議</h4>
       <h5 class="font-bold mt-4 mb-2">一、冷氣保養（每月1次）</h5>
       <ul class="list-disc pl-5 mb-4 space-y-2">
         <li>清潔濾網：關閉電源取下濾網，用吸塵器或軟毛刷清除灰塵，以清水沖洗後陰乾</li>
@@ -54,6 +62,23 @@ const services = [
     title: '供應零售',
     description: '各大品牌冷氣機銷售，包括大金VRV/VRF系統、日立、三菱等知名品牌。',
     detail: `
+      <h4 class="text-lg font-bold mb-3">我們供應的產品</h4>
+      
+      <ul class="list-disc pl-5 mb-4 space-y-2">
+        <li>大金VRV/VRF系統（Daikin VRV/VRF System）</li>
+        <li>大金（Daikin）</li>
+        <li>珍寶（Chunbao）</li>
+        <li>日立（Hitachi）</li>
+        <li>樂聲（Lennox）</li>
+        <li>美的（Midea）</li>
+        <li>三菱重工（Mitsubishi Heavy Industries）</li>
+        <li>三菱電機（Mitsubishi Electric）</li>
+        <li>水泵、雪種、電子板、溫度掣、壓縮機、冷卻水塔、水冷式櫃機、風機盤管等</li>
+      </ul>
+
+      <p class="mb-3">我們的專業顧問會根據您的空間大小、使用需求和預算，推薦最適合的產品型號。</p>
+
+      <p class="mb-4">所有產品均提供原廠保養，並可選購延長保養服務，確保您的投資得到長期保障。</p>
       <h4 class="text-lg font-bold mb-3">🏠 想買冷氣？配件唔齊？我哋幫你搞掂！</h4>
       <h5 class="font-bold mt-4 mb-2">❄️ 冷氣機零售</h5>
       <ul class="list-disc pl-5 mb-4 space-y-2">
@@ -100,9 +125,22 @@ const services = [
   },
   {
     id: 3,
-    title: '安裝工程',
+    title: '安裝冷氣',
     description: '提供各類型冷氣機安裝服務，包括分體式、窗口式、天花式等。',
     detail: `
+      <h4 class="text-lg font-bold mb-3">🛠️ 安裝工程服務範圍</h4>
+      <ul class="list-disc pl-5 mb-4 space-y-2">
+        <li>各類型冷氣機安裝 - 適合家居和小型辦公室</li>
+        <li>風機盤管安裝 - 提供高效的空氣流通</li>
+        <li>水冷式櫃機安裝 - 適合商業和辦公空間</li>
+        <li>冷卻水塔安裝 - 適合大型辦公室和商業場所</li>
+        <li>雪種銅喉安裝 - 確保冷氣系統的高效運行</li>
+        <li>去水系統安裝 - 防止漏水和異味</li>
+        <li>散熱架安裝 - 提高設備的散熱效率</li>
+        <li>冷凍水喉安裝 - 確保冷卻效果</li>
+        <li>白鐵風喉安裝 - 提供耐用的通風解決方案</li>
+        <li>抽風系統安裝 - 改善室內空氣質素</li>
+      </ul>
       <h4 class="text-lg font-bold mb-3">🔥 夏天熱到爆？新冷氣買咗但未裝？</h4>
       <p class="mb-3">🚀 我哋專業安裝團隊，快、靚、正幫你搞掂！</p>
 
@@ -159,6 +197,22 @@ const services = [
     title: '清洗冷氣',
     description: '清洗各類型冷氣設備，徹底清除積塵、黴菌和細菌，改善室內空氣質素。',
     detail: `
+      <h4 class="text-lg font-bold mb-3">🧹 冷氣清洗服務內容</h4>
+      <ul class="list-disc pl-5 mb-4 space-y-2">
+        <li>✔ 清洗各類型冷氣機</li>
+        <li>✔ 中央冷氣系統清洗</li>
+        <li>✔ 水冷式櫃機運炮清潔</li>
+        <li>✔ 大型水塔清洗</li>
+        <li>✔ 隔塵網、水泵、水喉清洗</li>
+        <li>✔ 水盤、風喉、風管清潔</li>
+        <li>✔ 通風系統全面清洗</li>
+      </ul>
+
+      <p class="mb-3">🌿 我哋採用環保清潔劑同專業設備，確保清洗效果徹底，唔會損壞設備。</p>
+
+      <p class="mb-3">⏰ 溫馨提示：建議每3-6個月做一次專業清洗，尤其係多塵、濕氣重或者有敏感人士嘅環境。</p>
+
+    
       <h4 class="text-lg font-bold mb-3">💨 冷氣「噏味」頂唔順？ 🥵 越開越唔凍又嘥電？</h4>
       <p class="mb-3">🚿 我哋幫你徹底「大掃除」！</p>
 
@@ -200,9 +254,39 @@ const services = [
   },
   {
     id: 5,
-    title: '檢查維修',
+    title: '冷氣維修',
     description: '檢查及維修冷氣系統，快速診斷故障原因，提供專業維修服務。',
     detail: `
+      <h4 class="text-lg font-bold mb-3">檢查及維修服務</h4>
+      
+      <h5 class="font-bold mt-4 mb-2">🔍 專業檢查項目</h5>
+      <ul class="list-disc pl-5 mb-4 space-y-2">
+        <li>✅ 散熱風扇機件及啤呤檢測</li>
+        <li>✅ 分體機壓縮器狀況評估</li>
+        <li>✅ 雪種壓力值測試</li>
+        <li>✅ 出風量、出風溫度及回風溫度檢查</li>
+        <li>✅ 送風機摩打、壓縮機及散熱扇運作檢查</li>
+        <li>✅ 電壓值、電流值測量</li>
+        <li>✅ 排水系統保溫情況評估</li>
+      </ul>
+
+      <h5 class="font-bold mt-4 mb-2">🛠️ 維修服務範圍</h5>
+      <ul class="list-disc pl-5 mb-4 space-y-2">
+        <li>✔ 設置冷氣開關掣</li>
+        <li>✔ 包保溫處理</li>
+        <li>✔ 加裝水泵</li>
+        <li>✔ 更換摩打、電容器、電子板</li>
+        <li>✔ 更換壓縮機</li>
+        <li>✔ 更換室內機及室外機</li>
+      </ul>
+
+      <h5 class="font-bold mt-4 mb-2">💡 服務特點</h5>
+      <ul class="list-disc pl-5 mb-4 space-y-2">
+        <li>📌 上門檢查費用：$450起</li>
+        <li>💰 如選用本公司維修服務，檢查費可扣減維修費用（洗機或入雪種除外）</li>
+        <li>🔧 配備先進診斷工具，快速準確找出故障原因</li>
+        <li>✨ 維修服務包括90天保養，確保設備穩定運行</li>
+      </ul>
       <h4 class="text-lg font-bold mb-3">冷氣唔凍？漏水？成日熄機？</h4>
       <p class="mb-3">我哋快修專家30分鐘到場，即場診斷！</p>
 
