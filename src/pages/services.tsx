@@ -412,7 +412,7 @@ const services = [
       </ul>
       <p class="mb-3">🏆 20年經驗團隊，過千宗成功案例，信心保證！</p>
     `,
-    image: '/services/vrv-vrf.jpg',
+    image: '/services/3.jpg',
     slug: 'vrv-vrf'
   },
   {
@@ -466,7 +466,7 @@ const services = [
       </ul>
       <p class="mb-3">🏆 20年經驗團隊，過千宗成功案例，信心保證！</p>
     `,
-    image: '/services/central-air-conditioning.jpg',
+    image: '/services/2.jpg',
     slug: 'central-air-conditioning'
   },
   {
@@ -516,7 +516,7 @@ const services = [
         <li>能源效率：符合LEED、WELL等綠建築認證要求</li>
       </ul>
     `,
-    image: '/services/ventilation.png',
+    image: '/services/1.jpg',
     slug: 'ventilation'
   }
 ];
