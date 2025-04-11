@@ -24,67 +24,67 @@ const projectCategories: ProjectCategory[] = [
   {
     id: 'central-ac',
     title: '中央空調',
-    folder: '中央空調',
+    folder: 'Central-AC',
     subCategories: [
-      { id: 'daikin', title: '大金', folder: '大金' },
-      { id: 'hitachi', title: '日立', folder: '日立' },
-      { id: 'trane', title: '特靈', folder: '特靈' },
-      { id: 'carrier', title: '開利', folder: '開利' },
-      { id: 'mcquay', title: '麥克維爾', folder: '麥克維爾' },
-      { id: 'danfoss', title: '丹佛斯', folder: '丹佛斯' },
+      { id: 'daikin', title: '大金', folder: 'Daikin' },
+      { id: 'hitachi', title: '日立', folder: 'Hitachi' },
+      { id: 'trane', title: '特靈', folder: 'Trane' },
+      { id: 'carrier', title: '開利', folder: 'Carrier' },
+      { id: 'mcquay', title: '麥克維爾', folder: 'McQuay' },
+      { id: 'danfoss', title: '丹佛斯', folder: 'Danfoss' },
       { id: 'fan-coil', title: 'FAN COIL', folder: 'FAN COIL' },
     ]
   },
   {
     id: 'vrv-vrf',
     title: 'VRV及VRF多聯機',
-    folder: 'VRV及VRF多聯機',
+    folder: 'VRV-VRF',
     subCategories: [
-      { id: 'daikin-vrv', title: '大金', folder: '大金' },
-      { id: 'hitachi-vrv', title: '日立', folder: '日立' },
-      { id: 'samsung', title: '三星', folder: '三星' },
-      { id: 'mitsubishi-heavy', title: '三菱重工', folder: '三菱重工' },
-      { id: 'mitsubishi-electric', title: '三菱電機', folder: '三菱電機' },
-      { id: 'toshiba', title: '東芝', folder: '東芝' },
-      { id: 'general', title: '珍寶', folder: '珍寶' },
-      { id: 'midea', title: '美的', folder: '美的' },
-      { id: 'mcquay-vrv', title: '麥克維爾', folder: '麥克維爾' },
+      { id: 'daikin-vrv', title: '大金', folder: 'Daikin' },
+      { id: 'hitachi-vrv', title: '日立', folder: 'Hitachi' },
+      { id: 'samsung', title: '三星', folder: 'Samsung' },
+      { id: 'mitsubishi-heavy', title: '三菱重工', folder: 'Mitsubishi-H' },
+      { id: 'mitsubishi-electric', title: '三菱電機', folder: 'Mitsubishi-E' },
+      { id: 'toshiba', title: '東芝', folder: 'Toshiba' },
+      { id: 'general', title: '珍寶', folder: 'Treasure' },
+      { id: 'midea', title: '美的', folder: 'Midea' },
+      { id: 'mcquay-vrv', title: '麥克維爾', folder: 'McQuay' },
     ]
   },
   {
     id: 'ac-installation',
     title: '安裝冷氣',
-    folder: '安裝冷氣'
+    folder: 'AC-Install'
   },
   {
     id: 'ac-cleaning',
     title: '清洗冷氣',
-    folder: '清洗冷氣'
+    folder: 'AC-Clean'
   },
   {
     id: 'ac-maintenance',
     title: '冷氣保養',
-    folder: '冷氣保養'
+    folder: 'AC-Maintenance'
   },
   {
     id: 'ac-repair',
     title: '冷氣維修',
-    folder: '冷氣維修',
+    folder: 'AC-Fix',
     subCategories: [
-      { id: 'chilla-water-pump', title: '冷水泵', folder: '冷水泵' },
+      { id: 'chilla-water-pump', title: '冷水泵', folder: 'cold-water-pump' },
       { id: 'motor', title: '馬達', folder: 'motor' },
-      { id: 'other-repair', title: '其他維修', folder: 'other repair' }
+      { id: 'other-repair', title: '其他維修', folder: 'other-repair' }
     ]
   },
   {
     id: 'ventilation',
     title: '通風工程',
-    folder: '通風工程'
+    folder: 'Vent'
   },
   {
     id: 'supply-retail',
     title: '供應零售',
-    folder: '供應零售'
+    folder: 'Supply-Retail'
   }
 ];
 
@@ -435,40 +435,40 @@ const ProjectsPage: NextPage = () => {
   const getProjectImages = () => {
     // 子分类图片集合
     const subCategoryImages: Record<string, Record<string, string[]>> = {
-      '中央空調': {
-        '大金': ['Daikin-1 (2).jpg', 'Daikin-1 (3).jpg', 'Daikin-1 (4).jpg', 'Daikin-1 (5).jpg', 'Daikin-1 (6).jpg','Daikin-1 (7).jpg','Daikin-1 (8).jpg','Daikin-1 (9).jpg','Daikin-1 (10).jpg','Daikin-1 (11).jpg','central-air-conditioning.jpg'],
-        '日立': ['Hitachi-1 (1).jpg', 'Hitachi-1 (2).jpg', 'Hitachi-1 (3).jpg', 'Hitachi-1 (4).jpg', 'Hitachi-1 (5).jpg', 'Hitachi-1 (6).jpg', 'Hitachi-1 (7).jpg', 'Hitachi-1 (8).jpg', 'Hitachi-1 (9).jpg', 'Hitachi-1 (10).jpg', 'Hitachi-1 (11).jpg', 'Hitachi-1 (12).jpg', 'Hitachi-1 (13).jpg', 'Hitachi-1 (14).jpg'],
-        '特靈': ['Trane1/Trane-1 (1).jpg', 'Trane1/Trane-1 (2).jpg', 'Trane1/Trane-1 (3).jpg', 'Trane1/Trane-1 (4).jpg', 'Trane1/Trane-1 (5).jpg', 'Trane1/Trane-1 (6).jpg', 'Trane1/Trane-1 (7).jpg', 'Trane1/Trane-1 (8).jpg', 'Trane1/Trane-1 (9).jpg', 'Trane2/Trane-1 (1).jpg', 'Trane2/Trane-1 (2).jpg', 'Trane2/Trane-1 (3).jpg'],
-        '開利': ['Carrier1/Carrier-1 (1).jpg', 'Carrier1/Carrier-1 (2).jpg', 'Carrier1/Carrier-1 (3).jpg', 'Carrier1/Carrier-1 (4).jpg', 'Carrier1/Carrier-1 (5).jpg', 'Carrier1/Carrier-1 (6).jpg', 'Carrier1/Carrier-1 (7).jpg', 'Carrier1/Carrier-1 (8).jpg', 'Carrier1/Carrier-1 (9).jpg', 'Carrier1/Carrier-1 (10).jpg', 'Carrier1/Carrier-1 (11).jpg', 'Carrier1/Carrier-1 (12).jpg', 'Carrier2/Carrier-1 (1).jpg', 'Carrier2/Carrier-1 (2).jpg', 'Carrier2/Carrier-1 (3).jpg', 'Carrier2/Carrier-1 (4).jpg', 'Carrier2/Carrier-1 (5).jpg', 'Carrier3/Carrier-1 (1).jpg', 'Carrier3/Carrier-1 (2).jpg', 'Carrier3/Carrier-1 (3).jpg', 'Carrier3/Carrier-1 (4).jpg', 'Carrier4/Carrier-1 (1).jpg', 'Carrier4/Carrier-1 (2).jpg', 'Carrier4/Carrier-1 (3).jpg', 'Carrier5/Carrier-1 (1).jpg', 'Carrier5/Carrier-1 (2).jpg', 'Carrier5/Carrier-1 (3).jpg', 'Carrier5/Carrier-1 (4).jpg', 'Carrier5/Carrier-1 (5).jpg', 'Carrier5/Carrier-1 (6).jpg', 'Carrier5/Carrier-1 (7).jpg'],
-        '麥克維爾': ['McQuay-1 (1).png', 'McQuay-1 (2).png', 'McQuay-1 (3).png', 'McQuay-1 (4).png', 'McQuay-1 (5).png'],
-        '丹佛斯': ['danfoss-1 (1).jpg', 'danfoss-1 (2).jpg', 'danfoss-1 (3).jpg', 'danfoss-1 (4).jpg', 'danfoss-1 (5).jpg', 'danfoss-1 (6).jpg', 'danfoss-1 (7).jpg', 'danfoss-1 (8).jpg'],
+      'Central-AC': {
+        'Daikin': ['Daikin-1 (2).jpg', 'Daikin-1 (3).jpg', 'Daikin-1 (4).jpg', 'Daikin-1 (5).jpg', 'Daikin-1 (6).jpg','Daikin-1 (7).jpg','Daikin-1 (8).jpg','Daikin-1 (9).jpg','Daikin-1 (10).jpg','Daikin-1 (11).jpg','central-air-conditioning.jpg'],
+        'Hitachi': ['Hitachi-1 (1).jpg', 'Hitachi-1 (2).jpg', 'Hitachi-1 (3).jpg', 'Hitachi-1 (4).jpg', 'Hitachi-1 (5).jpg', 'Hitachi-1 (6).jpg', 'Hitachi-1 (7).jpg', 'Hitachi-1 (8).jpg', 'Hitachi-1 (9).jpg', 'Hitachi-1 (10).jpg', 'Hitachi-1 (11).jpg', 'Hitachi-1 (12).jpg', 'Hitachi-1 (13).jpg', 'Hitachi-1 (14).jpg'],
+        'Trane': ['Trane1/Trane-1 (1).jpg', 'Trane1/Trane-1 (2).jpg', 'Trane1/Trane-1 (3).jpg', 'Trane1/Trane-1 (4).jpg', 'Trane1/Trane-1 (5).jpg', 'Trane1/Trane-1 (6).jpg', 'Trane1/Trane-1 (7).jpg', 'Trane1/Trane-1 (8).jpg', 'Trane1/Trane-1 (9).jpg', 'Trane2/Trane-1 (1).jpg', 'Trane2/Trane-1 (2).jpg', 'Trane2/Trane-1 (3).jpg'],
+        'Carrier': ['Carrier1/Carrier-1 (1).jpg', 'Carrier1/Carrier-1 (2).jpg', 'Carrier1/Carrier-1 (3).jpg', 'Carrier1/Carrier-1 (4).jpg', 'Carrier1/Carrier-1 (5).jpg', 'Carrier1/Carrier-1 (6).jpg', 'Carrier1/Carrier-1 (7).jpg', 'Carrier1/Carrier-1 (8).jpg', 'Carrier1/Carrier-1 (9).jpg', 'Carrier1/Carrier-1 (10).jpg', 'Carrier1/Carrier-1 (11).jpg', 'Carrier1/Carrier-1 (12).jpg', 'Carrier2/Carrier-1 (1).jpg', 'Carrier2/Carrier-1 (2).jpg', 'Carrier2/Carrier-1 (3).jpg', 'Carrier2/Carrier-1 (4).jpg', 'Carrier2/Carrier-1 (5).jpg', 'Carrier3/Carrier-1 (1).jpg', 'Carrier3/Carrier-1 (2).jpg', 'Carrier3/Carrier-1 (3).jpg', 'Carrier3/Carrier-1 (4).jpg', 'Carrier4/Carrier-1 (1).jpg', 'Carrier4/Carrier-1 (2).jpg', 'Carrier4/Carrier-1 (3).jpg', 'Carrier5/Carrier-1 (1).jpg', 'Carrier5/Carrier-1 (2).jpg', 'Carrier5/Carrier-1 (3).jpg', 'Carrier5/Carrier-1 (4).jpg', 'Carrier5/Carrier-1 (5).jpg', 'Carrier5/Carrier-1 (6).jpg', 'Carrier5/Carrier-1 (7).jpg'],
+        'McQuay': ['McQuay-1 (1).png', 'McQuay-1 (2).png', 'McQuay-1 (3).png', 'McQuay-1 (4).png', 'McQuay-1 (5).png'],
+        'Danfoss': ['danfoss-1 (1).jpg', 'danfoss-1 (2).jpg', 'danfoss-1 (3).jpg', 'danfoss-1 (4).jpg', 'danfoss-1 (5).jpg', 'danfoss-1 (6).jpg', 'danfoss-1 (7).jpg', 'danfoss-1 (8).jpg'],
         'FAN COIL': ['FAN COIL -1 (1).jpg', 'FAN COIL -1 (2).jpg', 'FAN COIL -1 (3).jpg', 'FAN COIL -1 (4).jpg'],
       },
-      'VRV及VRF多聯機': {
-        '大金': ['DAIKIN-1.jpg', 'DAIKIN-2.jpg', 'DAIKIN-3.jpg', 'DAIKIN-4.jpg', 'DAIKIN-5.jpg', 'DAIKIN-6.jpg', 'DAIKIN-7.jpg', 'DAIKIN-8.jpg', 'DAIKIN-9.jpg', 'DAIKIN-10.jpg', 'DAIKIN-11.jpg', 'DAIKIN-12.jpg', 'DAIKIN-13.jpg', 'DAIKIN-14.jpg', 'DAIKIN-15.jpg', 'DAIKIN-16.jpg', 'DAIKIN-17.jpg', 'DAIKIN-18.jpg', 'DAIKIN-19.jpg', 'DAIKIN-20.jpg', 'DAIKIN-21.jpg', 'DAIKIN-22.jpg', 'DAIKIN-23.jpg', 'DAIKIN-24.jpg'],
-        '日立': ['Hitachi-1.jpg', 'Hitachi-2.jpg', 'Hitachi-3.jpg', 'Hitachi-4.jpg'],
-        '三星': ['Samsung-1.jpg', 'Samsung-2.jpg', 'Samsung-3.jpg', 'Samsung-4.jpg', 'Samsung-5.jpg', 'Samsung-6.jpg'],
-        '三菱重工': ['Mitsubishi Heavy Industries-1.jpg', 'Mitsubishi Heavy Industries-2.jpg', 'Mitsubishi Heavy Industries-3.jpg', 'Mitsubishi Heavy Industries-4.jpg', 'Mitsubishi Heavy Industries-5.jpg', 'Mitsubishi Heavy Industries-6.jpg', 'Mitsubishi Heavy Industries-7.jpg', 'Mitsubishi Heavy Industries-8.jpg', 'Mitsubishi Heavy Industries-9.jpg'],
-        '三菱電機': ['Mitsubishi Electric-1.jpg', 'Mitsubishi Electric-2.jpg', 'Mitsubishi Electric-3.jpg', 'Mitsubishi Electric-4.jpg', 'Mitsubishi Electric-5.jpg', 'Mitsubishi Electric-6.jpg', 'Mitsubishi Electric-7.jpg'],
-        '東芝': ['Toshiba-1.jpg', 'Toshiba-2.jpg', 'Toshiba-3.jpg', 'Toshiba-4.jpg', 'Toshiba-5.jpg', 'Toshiba-6.jpg'],
-        '珍寶': ['GENERAL-1.jpg', 'GENERAL-2.jpg', 'GENERAL-3.jpg', 'GENERAL-4.jpg', 'GENERAL-5.jpg', 'GENERAL-6.jpg'],
-        '美的': ['Midea-1.jpg', 'Midea-2.jpg', 'Midea-3.jpg'],
-        '麥克維爾': ['McQuay-1.png', 'McQuay-2.png', 'McQuay-3.png', 'McQuay-4.jpg', 'McQuay-5.jpg', 'McQuay-6.png'],
+      'VRV-VRF': {
+        'Daikin': ['DAIKIN-1.jpg', 'DAIKIN-2.jpg', 'DAIKIN-3.jpg', 'DAIKIN-4.jpg', 'DAIKIN-5.jpg', 'DAIKIN-6.jpg', 'DAIKIN-7.jpg', 'DAIKIN-8.jpg', 'DAIKIN-9.jpg', 'DAIKIN-10.jpg', 'DAIKIN-11.jpg', 'DAIKIN-12.jpg', 'DAIKIN-13.jpg', 'DAIKIN-14.jpg', 'DAIKIN-15.jpg', 'DAIKIN-16.jpg', 'DAIKIN-17.jpg', 'DAIKIN-18.jpg', 'DAIKIN-19.jpg', 'DAIKIN-20.jpg', 'DAIKIN-21.jpg', 'DAIKIN-22.jpg', 'DAIKIN-23.jpg', 'DAIKIN-24.jpg'],
+        'Hitachi': ['Hitachi-1.jpg', 'Hitachi-2.jpg', 'Hitachi-3.jpg', 'Hitachi-4.jpg'],
+        'Samsung': ['Samsung-1.jpg', 'Samsung-2.jpg', 'Samsung-3.jpg', 'Samsung-4.jpg', 'Samsung-5.jpg', 'Samsung-6.jpg'],
+        'Mitsubishi-H': ['Mitsubishi Heavy Industries-1.jpg', 'Mitsubishi Heavy Industries-2.jpg', 'Mitsubishi Heavy Industries-3.jpg', 'Mitsubishi Heavy Industries-4.jpg', 'Mitsubishi Heavy Industries-5.jpg', 'Mitsubishi Heavy Industries-6.jpg', 'Mitsubishi Heavy Industries-7.jpg', 'Mitsubishi Heavy Industries-8.jpg', 'Mitsubishi Heavy Industries-9.jpg'],
+        'Mitsubishi-E': ['Mitsubishi Electric-1.jpg', 'Mitsubishi Electric-2.jpg', 'Mitsubishi Electric-3.jpg', 'Mitsubishi Electric-4.jpg', 'Mitsubishi Electric-5.jpg', 'Mitsubishi Electric-6.jpg', 'Mitsubishi Electric-7.jpg'],
+        'Toshiba': ['Toshiba-1.jpg', 'Toshiba-2.jpg', 'Toshiba-3.jpg', 'Toshiba-4.jpg', 'Toshiba-5.jpg', 'Toshiba-6.jpg'],
+        'Treasure': ['GENERAL-1.jpg', 'GENERAL-2.jpg', 'GENERAL-3.jpg', 'GENERAL-4.jpg', 'GENERAL-5.jpg', 'GENERAL-6.jpg'],
+        'Midea': ['Midea-1.jpg', 'Midea-2.jpg', 'Midea-3.jpg'],
+        'McQuay': ['McQuay-1.png', 'McQuay-2.png', 'McQuay-3.png', 'McQuay-4.jpg', 'McQuay-5.jpg', 'McQuay-6.png'],
       },
-      '冷氣維修': {
-        '冷水泵': ['chillawaterpump-1-1.jpeg', 'chillawaterpump-1-2.jpeg', 'chillawaterpump-1-3.jpeg', 'chillawaterpump-1-4.jpeg', 'chillawaterpump-1-5.jpeg', 'chillawaterpump-1-6.jpeg', 'chillawaterpump-1-7.jpeg', 'chillawaterpump-1-8.jpeg', 'chillawaterpump-1-9.jpeg', 'chillawaterpump-1-10.jpeg', 'chillawaterpump-1-11.jpeg', 'chillawaterpump-1-12.jpeg', 'chillawaterpump-1-13.jpeg', 'chillawaterpump-1-14.jpeg', 'chillawaterpump-1-15.jpeg', 'chillawaterpump-1-16.jpeg', 'chillawaterpump-1-17.jpeg', 'chillawaterpump-1-18.jpeg', 'chillawaterpump-1-19.jpeg', 'chillawaterpump-1-20.jpeg', 'chillawaterpump-1-21.jpeg'],
+      'AC-Fix': {
+        'cold-water-pump': ['chillawaterpump-1-1.jpeg', 'chillawaterpump-1-2.jpeg', 'chillawaterpump-1-3.jpeg', 'chillawaterpump-1-4.jpeg', 'chillawaterpump-1-5.jpeg', 'chillawaterpump-1-6.jpeg', 'chillawaterpump-1-7.jpeg', 'chillawaterpump-1-8.jpeg', 'chillawaterpump-1-9.jpeg', 'chillawaterpump-1-10.jpeg', 'chillawaterpump-1-11.jpeg', 'chillawaterpump-1-12.jpeg', 'chillawaterpump-1-13.jpeg', 'chillawaterpump-1-14.jpeg', 'chillawaterpump-1-15.jpeg', 'chillawaterpump-1-16.jpeg', 'chillawaterpump-1-17.jpeg', 'chillawaterpump-1-18.jpeg', 'chillawaterpump-1-19.jpeg', 'chillawaterpump-1-20.jpeg', 'chillawaterpump-1-21.jpeg'],
         'motor': ['motor-1-1.jpg', 'motor-1-2.jpg', 'motor-1-3.jpg', 'motor-1-4.jpg', 'motor-1-5.jpg', 'motor-1-6.jpg', 'motor-1-7.jpg', 'motor-1-8.jpg'],
-        'other repair': ['other repair1 (1).jpg', 'other repair1 (2).jpg', 'other repair1 (3).jpg', 'other repair1 (4).jpg', 'other repair1 (5).jpg', 'other repair1 (6).jpg', 'other repair1 (7).jpg', 'other repair1 (8).jpg', 'other repair1 (9).jpg', 'other repair1 (10).jpg', 'other repair1 (11).jpg', 'other repair1 (12).jpg']
+        'other-repair': ['other-repair1 (1).jpg', 'other-repair1 (2).jpg', 'other-repair1 (3).jpg', 'other-repair1 (4).jpg', 'other-repair1 (5).jpeg', 'other-repair1 (6).jpg', 'other-repair1 (7).jpg', 'other-repair1 (8).jpg', 'other-repair1 (9).jpeg', 'other-repair1 (11).jpg', 'other-repair1 (12).jpg']
       }
     };
 
     // 主分类图片集合（没有子分类的项目）
     const mainCategoryImages: Record<string, string[]> = {
-      '通風工程': ['ventilation.png', 'airduct-2.png', 'airduct-3.png', 'airduct-4.png', 'airduct-5.png', 'airduct-6.png', 'airduct-7.jpeg', 'airduct-8.jpeg', 'airduct-9.jpeg', 'airduct-10.jpeg'],
-      '安裝冷氣': ['Install air conditioner-1 (1).jpeg', 'Install air conditioner-1 (2).jpeg', 'Install air conditioner-1 (3).jpeg', 'Install air conditioner-1 (4).jpeg', 'Install air conditioner-1 (5).jpeg', 'Install air conditioner-1 (6).jpeg', 'Install air conditioner-1 (7).jpeg', 'Install air conditioner-1 (8).jpeg', 'Install air conditioner-1 (9).jpeg', 'Install air conditioner-1 (10).jpeg', 'Install air conditioner-1 (11).jpeg', 'Install air conditioner-1 (12).jpeg', 'Install air conditioner-1 (13).jpeg', 'Install air conditioner-1 (14).jpeg', 'Install air conditioner-1 (15).jpeg', 'Install air conditioner-1 (1).png', 'Install air conditioner-1 (2).png'],
-      '清洗冷氣': ['Cleaning the air conditioner1 (1).jpg', 'Cleaning the air conditioner1 (2).jpg', 'Cleaning the air conditioner1 (1).png', 'Cleaning the air conditioner1 (2).png', 'Cleaning the air conditioner1 (3).png', 'Cleaning the air conditioner1 (4).png', 'Cleaning the air conditioner1 (5).png', 'Cleaning the air conditioner1 (6).png'],
-      '冷氣保養': ['ps.jpg'],
-      '供應零售': ['aircon-1 (1).jpg', 'aircon-1 (12).jpg', 'aircon-1 (13).jpg', 'aircon-1 (14).jpg', 'aircon-1 (15).jpg', 'aircon-1 (16).jpg', 'aircon-1 (17).jpg', 'aircon-1 (18).jpg', 'aircon-1 (19).jpg', 'aircon-1 (20).jpg', 'aircon-1 (21).jpg', 'aircon-1 (22).jpg', 'aircon-1 (23).jpg', 'aircon-1 (24).jpg', 'aircon-1 (25).JPG', 'aircon-1 (1).png']
+      'Vent': ['ventilation.png', 'airduct-2.png', 'airduct-3.png', 'airduct-4.png', 'airduct-5.png', 'airduct-6.png', 'airduct-7.jpeg', 'airduct-8.jpeg', 'airduct-9.jpeg', 'airduct-10.jpeg'],
+      'AC-Install': ['Install air conditioner-1 (1).jpeg', 'Install air conditioner-1 (2).jpeg', 'Install air conditioner-1 (3).jpeg', 'Install air conditioner-1 (4).jpeg', 'Install air conditioner-1 (5).jpeg', 'Install air conditioner-1 (6).jpeg', 'Install air conditioner-1 (7).jpeg', 'Install air conditioner-1 (8).jpeg', 'Install air conditioner-1 (9).jpeg', 'Install air conditioner-1 (10).jpeg', 'Install air conditioner-1 (11).jpeg', 'Install air conditioner-1 (12).jpeg', 'Install air conditioner-1 (13).jpeg', 'Install air conditioner-1 (14).jpeg', 'Install air conditioner-1 (15).jpeg', 'Install air conditioner-1 (1).png', 'Install air conditioner-1 (2).png'],
+      'AC-Clean': ['Cleaning the air conditioner1 (1).jpg', 'Cleaning the air conditioner1 (2).jpg', 'Cleaning the air conditioner1 (1).png', 'Cleaning the air conditioner1 (2).png', 'Cleaning the air conditioner1 (3).png', 'Cleaning the air conditioner1 (4).png', 'Cleaning the air conditioner1 (5).png', 'Cleaning the air conditioner1 (6).png'],
+      'AC-Maintenance': ['ps.jpg'],
+      'Supply-Retail': ['aircon-1 (1).jpg', 'aircon-1 (12).jpg', 'aircon-1 (13).jpg', 'aircon-1 (14).jpg', 'aircon-1 (15).jpg', 'aircon-1 (16).jpg', 'aircon-1 (17).jpg', 'aircon-1 (18).jpg', 'aircon-1 (19).jpg', 'aircon-1 (20).jpg', 'aircon-1 (21).jpg', 'aircon-1 (22).jpg', 'aircon-1 (23).jpg', 'aircon-1 (24).jpg', 'aircon-1 (25).JPG', 'aircon-1 (1).png']
     };
 
     // 返回图片数组
